@@ -7,8 +7,8 @@ CREATE TABLE Users
 CREATE TABLE Posts
 (
     post_id int NOT NULL AUTO_INCREMENT,
-    content varchar(255),
-    author_id varchar(1000),
+    content varchar(1000),
+    author_id varchar(255),
     PRIMARY KEY (post_id),
     FOREIGN KEY (author_id) REFERENCES Users(user_id)
 )ENGINE=INNODB;
