@@ -25,4 +25,5 @@ if($count == 0){
     echo "The post was successfully saved<br>";
 }
 
+$mysqli->close();
 ?>
