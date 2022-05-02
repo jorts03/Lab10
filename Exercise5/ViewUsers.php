@@ -17,7 +17,7 @@ echo "<table border =\"1\">";
 echo "<th>Users</th>";
 while($row = mysqli_fetch_array($result)){
     echo "<tr>";
-    echo "<td> . $row[0] . </td>";
+    echo "<td>  $row[0]  </td>";
     echo "</tr>";
 }
 echo "</table>";
