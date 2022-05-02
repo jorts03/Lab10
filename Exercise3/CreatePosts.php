@@ -1,5 +1,5 @@
 <?php
-$hostname = "mysql.eecs.ku.edu";
+$hostname = "129.237.87.5";
 $username = "j149c752";
 $password = "LekeiN7c";
 $database = "j149c752";
@@ -20,7 +20,7 @@ $count = mysqli_num_rows($result);
 if($count == 0){
     echo "The user does not exist<br>";
 } else {
-    $query = "INSERT INTO Posts (content) VALUES ('$content')";
+    $query = "INSERT INTO Posts (content, author_id) VALUES ('$content', '$user')";
     mysqli_query($mysqli, $query);
     echo "The post was successfully saved<br>";
 }
