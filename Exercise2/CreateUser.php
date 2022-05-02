@@ -1,5 +1,5 @@
 <?php
-$hostname = "mysql.eecs.ku.edu";
+$hostname = "129.237.87.5";
 $username = "j149c752";
 $password = "LekeiN7c";
 $database = "j149c752";
