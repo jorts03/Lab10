@@ -1,13 +1,10 @@
 <html>
   <head>
-    <title>View User Posts</title>
+    <title>Delete User Posts</title>
   </head>
 
   <body>
     <form action="DeletePost.php" method="post">
-      <label for="user_id">Select a User</label>
-      <br>
-      <select name="user_id" id="user_id">
       <?php
         $hostname = "129.237.87.5";
         $username = "j149c752";
@@ -23,7 +20,7 @@
         $query = "SELECT * FROM Posts";
         $result = mysqli_query($mysqli, $query);
 
-        echo "<table border =\"1\">";
+        echo "<table>";
         echo "<tr>"
             echo "<td>" . 'Posts' . "</td>"
             echo "<td>" . 'Author' . "</td>"
@@ -41,7 +38,6 @@
         echo "</table>";
         $mysqli->close();
       ?>
-      </select>
       <br>
       <br>
       <input type="submit">  
