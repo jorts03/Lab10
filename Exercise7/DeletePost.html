@@ -20,22 +20,22 @@
         $query = "SELECT * FROM Posts";
         $result = mysqli_query($mysqli, $query);
 
-        echo "<table>";
-        echo "<tr>"
-            echo "<td>" . 'Posts' . "</td>"
-            echo "<td>" . 'Author' . "</td>"
-            echo "<td>" . 'Delete?' . "</td>"
-        echo "</tr>"
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                echo "<tr> ";
-                echo "<td>" . $row["content"] . "</td>";
-                echo "<td>" . $row["author_id"] . "</td>";
-                echo "<td><input type='checkbox' name='" . $row["post_id"] . "'></td>";
+        echo "<table style='border: 1px solid; width: 100%'>";
+                echo "<tr>";
+                echo "<td style='border: 1px solid'>" . "Post" . "</td>";
+                echo "<td style='border: 1px solid'>" . "Author" . "</td>";
+                echo "<td style='border: 1px solid'>" . "Delete?" . "</td>";
                 echo "</tr>";
-            }
-        }    
-        echo "</table>";
+                if (mysqli_num_rows($result) > 0){
+                    while ($row = mysqli_fetch_assoc($result)){
+                        echo "<tr>";
+                        echo "<td style='border: 1px solid'>" . $row["content"] . "</td>";
+                        echo "<td style='border: 1px solid'>" . $row["author_id"] . "</td>";
+                        echo "<td style='border: 1px solid'><input type='checkbox' name='" . $row["post_id"] . "'></td>";
+                        echo "</tr>";
+                    }
+                }
+                echo "</table>";
         $mysqli->close();
       ?>
       <br>
