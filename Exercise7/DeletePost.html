@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>View User Posts</title>
+  </head>
+
+  <body>
+    <form action="DeletePost.php" method="post">
+      <label for="user_id">Select a User</label>
+      <br>
+      <select name="user_id" id="user_id">
+      <?php
+        $hostname = "129.237.87.5";
+        $username = "j149c752";
+        $password = "LekeiN7c";
+        $database = "j149c752";
+        $mysqli = new mysqli($hostname, $username, $password, $database);
+
+        if ($mysqli->connect_errno) { 
+          printf("Connect failed: %s\n",$mysqli->connect_error); 
+          exit(); 
+        }
+
+        $query = "SELECT * FROM Posts";
+        $result = mysqli_query($mysqli, $query);
+
+        echo "<table border =\"1\">";
+        echo "<tr>"
+            echo "<td>" . 'Posts' . "</td>"
+            echo "<td>" . 'Author' . "</td>"
+            echo "<td>" . 'Delete?' . "</td>"
+        echo "</tr>"
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<tr> ";
+                echo "<td>" . $row["content"] . "</td>";
+                echo "<td>" . $row["author_id"] . "</td>";
+                echo "<td><input type='checkbox' name='" . $row["post_id"] . "'></td>";
+                echo "</tr>";
+            }
+        }    
+        echo "</table>";
+        $mysqli->close();
+      ?>
+      </select>
+      <br>
+      <br>
+      <input type="submit">  
+    </form>
+  </body>
+</html>
